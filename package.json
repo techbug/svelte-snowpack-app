@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "snowpack dev",
+	"dev:netlify": "netlify dev",
     "build": "snowpack build"
   },
   "browserslist": [
@@ -21,6 +22,7 @@
     "axios": "^0.21.1",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "lodash": "^4.17.20",
+    "netlify-cli": "^3.13.10",
     "postcss": "^8.2.4",
     "qs": "^6.9.6",
     "snowpack": "^2",

@@ -1,2 +1,19 @@
+# sample netlify.toml
+
+#제품 모드
 [build]
-	functions = "functions"
+  command = "npm run build"
+  functions = "functions" # netlify dev uses this directory to scaffold and serve your functions
+  publish = "build"
+
+# note: each of these fields are OPTIONAL, with an exception that when you're specifying "command" and "targetPort", you must specify framework = "#custom"
+# 개발 모드
+[dev]
+  framework = "#custom" #감지할 프로젝트 유형을 지정합니다. 앱서버 및 
+  command = "npm run dev" # 연결할 프로젝트의 개발 서버를 실행하는 명령(스크립트)를 지정한다.
+  targetPort = 8080 # 연결할 프로젝트 개발 서버의 포트 지정
+  port = 8888 # 출력할 Netlify 서버의 포트 지정
+  publish = "public" # The path to your static content folder
+  jwtSecret = "secret" # JWT기반 리다이렉트에 대한 유효한 시크릿 토큰 사용여부 
+  jwtRolePath = "app_metadata.authorization.roles" # JWT기반 리다이렉트에 대한 역할 값을 찾아야할 객체 경로 지정
+  autoLaunch = true # Netlify 서버가 준비되면 자동으로 브라우저를 오픈할 것인지 여부 지정
