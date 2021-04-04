@@ -1,7 +1,9 @@
 const production = process.env.NODE_ENV === 'production';
 
 function babelOptions() {
-  return { plugins: ['transform-remove-console'] };
+  return { plugins: production
+	 ? ['transform-remove-console']
+	 : [] };
 }
 
 module.exports = {
@@ -18,4 +20,7 @@ module.exports = {
   alias: {
     '~': './src',
   },
+  devOptions: {
+	  port: 8079
+  }
 };
