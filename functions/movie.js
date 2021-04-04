@@ -1,13 +1,14 @@
-const axios = require('axios')
+const axios = require('axios')	// Netlify는 NodeJS환경이므로 require
+const { OMDB_API_KEY } = process.env	// 환경변수에 API키 담기위해사용
 
 exports.handler = async function(event,context){
 	const params = JSON.parse(event.body);
 	const { title, type, year, page, id } = params;
-	const API_KEY = 'c7b88915';
+	// const OMDB_API_KEY = '******'; // 서버(Netlify에 environment) 이거나 로컬(.env)에 저장
   
 	const url = id
-	  ? `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`
-	  : `https://www.omdbapi.com/?apikey=${API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`;
+	  ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}&plot=full`
+	  : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`;
   
 
 
