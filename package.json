@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "snowpack dev",
-	"dev:netlify": "netlify dev",
+    "dev:netlify": "netlify dev",
     "build": "snowpack build"
   },
   "browserslist": [
