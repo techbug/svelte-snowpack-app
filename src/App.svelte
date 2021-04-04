@@ -11,6 +11,8 @@
     { id: 4, name: 'white', hex: '#FFFFFF' },
     { id: 5, name: 'black', hex: '#000000' },
   ];
+
+
 </script>
 
 <Header />
